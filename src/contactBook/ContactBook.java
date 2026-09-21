@@ -33,7 +33,7 @@ public class ContactBook {
     //Pre: name != null && hasContact(name)
     public void deleteContact(String name) {
         int index = searchIndex(name);
-        for(int i=index-1; i<counter; i++)
+        for(int i=index; i<counter; i++)
             contacts[i] = contacts[i+1];
         counter--;
     }

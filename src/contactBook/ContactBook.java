@@ -115,10 +115,11 @@ public class ContactBook {
     public boolean hasdifnum(){
         int[] tmp = new int[counter];
         for(int i = 0; i<counter; i++){
-            if(!hasNum(tmp, contacts[i].getPhone())) {
+            if(hasNum(tmp, contacts[i].getPhone())) {
                 tmp[i] = contacts[i].getPhone();
                 return false;
             }
+            tmp[i] = contacts[i].getPhone();
         }
         return true;
     }

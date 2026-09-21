@@ -14,6 +14,7 @@ public class Main {
     public static final String SET_EMAIL      = "SE";
     public static final String LIST_CONTACTS  = "LC";
     public static final String QUIT           = "Q";
+    public static final String EP             = "EP";
     public static final String GET_NAME = "GN";
 
     //Constantes que definem as mensagens para o utilizador
@@ -58,6 +59,9 @@ public class Main {
                     break;
                 case LIST_CONTACTS:
                     listAllContacts(cBook);
+                    break;
+                case EP:
+                    difnum(cBook);
                     break;
                 default:
                     System.out.println(COMMAND_ERROR);
@@ -162,5 +166,11 @@ public class Main {
         }
         else
             System.out.println(nome);
+    }
+
+    private static void difnum(ContactBook cbook){
+        if(cbook.hasdifnum()){
+            System.out.println("hello");
+        }
     }
 }

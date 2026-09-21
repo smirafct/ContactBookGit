@@ -1,7 +1,5 @@
 package contactBook;
 
-import contactBook.Contact;
-
 public class ContactBook {
     static final int DEFAULT_SIZE = 100;
 
@@ -112,6 +110,24 @@ public class ContactBook {
     //Pre: hasNext()
     public Contact next() {
         return contacts[currentContact++];
+    }
+
+    public boolean hasdifnum(){
+        int[] tmp = new int[counter];
+        for(int i = 0; i<counter; i++){
+            if(!hasNum(tmp, contacts[i].getPhone())) {
+                tmp[i] = contacts[i].getPhone();
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public boolean hasNum(int[] tmp, int num){
+        for(int i = 0; i<tmp.length; i++){
+            if(tmp[i] == num)return true;;
+        }
+        return false;
     }
 
 }

@@ -1,7 +1,5 @@
 package contactBook;
 
-import contactBook.Contact;
-
 public class ContactBook {
     static final int DEFAULT_SIZE = 100;
 
@@ -35,7 +33,7 @@ public class ContactBook {
     //Pre: name != null && hasContact(name)
     public void deleteContact(String name) {
         int index = searchIndex(name);
-        for(int i=index; i<counter; i++)
+        for(int i=index-1; i<counter; i++)
             contacts[i] = contacts[i+1];
         counter--;
     }
@@ -74,12 +72,11 @@ public class ContactBook {
     }
 
     private void resize() {
-        Contact tmp[] = new Contact[2*contacts.length];
+        Contact[] tmp = new Contact[2*contacts.length];
         for (int i=0;i<counter; i++)
             tmp[i] = contacts[i];
         contacts = tmp;
     }
-
     public void initializeIterator() {
         currentContact = 0;
     }
